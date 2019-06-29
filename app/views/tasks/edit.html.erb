@@ -1,0 +1,10 @@
+<h1>タスク編集</h1>
+<form method="POST" action="/tasks/<%= @task.id %>" >
+  <input type="hidden" name="_method" value="PUT" >
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" >
+
+  <label>content</label>
+  <input name=task[content] type="text" value="<%= @task.content %>" />
+  <input type="submit" value="タスク更新" />
+</form>
+<%= link_to  "戻る", root_path %>
